@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+<!-- Dynamic CSS import -->
+{% block style %}
+    <link rel="stylesheet" href="{{url_for('static', filename='inputData.css')}}">
+{% endblock %}
+
+<!-- Dynamic HTML import -->
+{% block content %}
+    <div class="title">
+        <h1>Informe os valores</h1>
+        <h3>Para calcular a equação do segundo grau</h3>
+    </div>
+    <div class="container">
+        <form action="/resolution" method="POST">
+            <label for="A">
+                <span>A</span>
+                <input type="number" name="A" required>
+            </label>
+            <label for="B">
+                <span>B</span>
+                <input type="number" name="B" required>
+            </label>
+            <label for="C">
+                <span>C</span>
+                <input type="number" name="C" required>
+            </label>
+            <!-- Enviar formulário -->
+            <input type="submit" value="Calcular">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,174 @@
+{% extends 'index.html' %}
+
+<!-- Dynamic CSS import -->
+{% block style %}
+    <link rel="stylesheet" href="{{url_for('static', filename='resolution.css')}}">
+{% endblock %}
+
+<!-- Dynamic HTML import -->
+{% block content %}
+    <div class='container'>
+        <!-- Equação Completa -->
+        <div class='box' style='--color: #fc9e5f'>
+            <div class="left"></div>
+            <div class='content'>
+                <div class='icon'>
+                    <ion-icon name='calculator'></ion-icon>
+                </div>
+                <div class='text'>
+                    <h3>Equação do Segundo Grau</h3>
+                    <p>{{A}}x² + {{B}}x + {{C}} = 0</p>
+                </div>
+            </div>
+            <div class='resolution'>
+                <div class='textr'>
+                    <h3>Resolução Completa</h3>
+                    <div class='resp'>
+                        <p>📐 = ({{B}})² - (4 * {{A}} * {{C}})</p>
+                        <p>📐 = {{B**2}} - {{4*A*C}}</p>
+                        <p>📐 = {{delta}}</p>
+                        <br>
+                        {% if delta > 0 %}
+                            <p><span>X1</span> = (({{B}} * -1) + raiz({{delta}})) / (2 * {{A}})</p>
+                            <p><span>X1</span> = ({{B*-1}} + {{raiz_delta}}) / {{2*A}}</p>
+                            <p><span>X1</span> = {{(B*-1) + raiz_delta}} / {{2*A}}</p>
+                            <p><span>X1</span> = {{data[0]}}</p>
+                            <br>
+                            <p><span>X2</span> = (({{B}} * -1) - raiz({{delta}})) / (2 * {{A}})</p>
+                            <p><span>X2</span> = ({{B*-1}} - {{raiz_delta}}) / {{2*A}}</p>
+                            <p><span>X2</span> = {{(B*-1) - raiz_delta}} / {{2*A}}</p>
+                            <p><span>X2</span> = {{data[1]}}</p>
+                        {% endif %}
+                        {% if delta == 0 %}
+                            <p><span>X</span> = (({{B}} * -1) + raiz({{delta}})) / (2 * {{A}})</p>
+                            <p><span>X</span> = ({{B*-1}} + {{raiz_delta}}) / {{2*A}}</p>
+                            <p><span>X</span> = {{(B*-1) + raiz_delta}} / {{2*A}}</p>
+                            <p><span>X</span> = {{data[0]}}</p>
+                            <br>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Delta -->
+        <div class='box' style='--color: #a362ea'>
+            <div class="left"></div>
+            <div class='content'>
+                <div class='icon'>
+                    <ion-icon name='triangle'></ion-icon>
+                </div>
+                <div class='text'>
+                    <h3>Delta</h3>
+                    <p>{{delta}}</p>
+                </div>
+                
+            </div>
+            <div class="resolution">
+                <div class='textr'>
+                    <h3>Resolução Delta</h3>
+                    <div class='resp'>
+                        <p>📐 = ({{B}})² - (4 * {{A}} * {{C}})</p>
+                        <p>📐 = {{B**2}} - {{4*A*C}}</p>
+                        <p>📐 = {{delta}}</p>
+                    </div>
+                </div>
+            </div>          
+        </div>
+        {% if delta > 0 %}
+            <!-- Box X1 -->
+            <div class='box' style='--color: #0ed095'>
+                <div class="left"></div>
+                <div class='content'>
+                    <div class='icon'>
+                        <ion-icon name='checkbox'></ion-icon>
+                    </div>
+                    <div class='text'>
+                        <h3>Primeira Raiz</h3>
+                        <p>X1 = {{data[0]}}</p>
+                    </div>
+                </div>
+                <div class="resolution">
+                    <div class='textr'>
+                        <h3>Resolução X1</h3>
+                        <div class="resp">
+                            <p><span>X1</span> = (({{B}} * -1) + raiz({{delta}})) / (2 * {{A}})</p>
+                            <p><span>X1</span> = ({{B*-1}} + {{raiz_delta}}) / {{2*A}}</p>
+                            <p><span>X1</span> = {{(B*-1) + raiz_delta}} / {{2*A}}</p>
+                            <p><span>X1</span> = {{data[0]}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Box X2 -->
+            <div class='box' style='--color: #0ed095'>
+                <div class="left"></div>
+                <div class='content'>
+                    <div class='icon'>
+                        <ion-icon name='checkbox'></ion-icon>
+                    </div>
+                    <div class='text'>
+                        <h3>Segunda Raiz</h3>
+                        <p>X2 = {{data[1]}}</p>
+                    </div>
+                </div>
+                <div class="resolution">
+                    <div class='textr'>
+                        <h3>Resolução X2</h3>
+                        <div class="resp">
+                            <p><span>X2</span> = (({{B}} * -1) - raiz({{delta}})) / (2 * {{A}})</p>
+                            <p><span>X2</span> = ({{B*-1}} - {{raiz_delta}}) / {{2*A}}</p>
+                            <p><span>X2</span> = {{(B*-1) - raiz_delta}} / {{2*A}}</p>
+                            <p><span>X2</span> = {{data[1]}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if delta == 0 %}
+            <!-- Box X -->
+            <div class='box' style='--color: #0ed095'>
+                <div class="left"></div>
+                <div class='content'>
+                    <div class='icon'>
+                        <ion-icon name='checkbox'></ion-icon>
+                    </div>
+                    <div class='text'>
+                        <h3>Raiz Única</h3>
+                        <p>X = {{data[0]}}</p>
+                    </div>
+                </div>
+                <div class="resolution">
+                    <div class='textr'>
+                        <h3>Resolução Raiz Única</h3>
+                        <div class="resp">
+                            <p><span>X</span> = (({{B}} * -1) + raiz({{delta}})) / (2 * {{A}})</p>
+                            <p><span>X</span> = ({{B*-1}} + {{raiz_delta}}) / {{2*A}}</p>
+                            <p><span>X</span> = {{(B*-1) + raiz_delta}} / {{2*A}}</p>
+                            <p><span>X</span> = {{data[0]}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if delta < 0 %}
+            <!-- Sem Raíz -->
+            <div class='box' style='--color: #f00'>
+                <div class="left"></div>
+                <div class='content'>
+                    <div class='icon'>
+                        <ion-icon name='alert-circle'></ion-icon>
+                    </div>
+                    <div class='text'>
+                        <h3>Não possui RAIZ</h3>
+                        <p>Delta negativo não retorna raíz</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <a href="/voltar">
+        <div class="voltar">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+        </div>
+    </a>
+{% endblock %}

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 100vw;
+    background: #ececec;
+}
+.title
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title h1
+{   
+    font-size: 3rem;
+    color: #fc9e5f;
+    height: 55px;
+}
+.title h3
+{
+    font-size: 1em;
+    color: #888888;
+    margin: 0 0 20px 0;
+}
+.container
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    min-width: 400px;
+    flex-direction: column;
+    align-items: center;
+}
+form label {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px 0 0;
+}
+form label span {
+    margin: 0 20px 0 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 10px;
+}
+form input {
+    width: 350px;
+    height: 35px;
+    outline: none;
+    font-size: 1rem;
+    color: rgba(166, 166, 166);
+    padding: 0 0 0 5px;
+    border: 2px solid #888;
+    border-radius: 6px;
+    transition: 0.3s ease-out;
+}
+form input:focus
+{
+    border: 2px solid #fc9e5f;
+}
+form input[type="submit"] {
+    cursor: pointer;
+    width: 40%;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 20px;
+    background: #fc9e5f;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: 0.5s ease-in-out;
+}
+form input[type="submit"]:hover {
+    background: #ff812d;
+}
