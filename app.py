@@ -29,9 +29,9 @@ def resolution():
 
         return render_template(
             'resolution.html',
-            A = A,
-            B = B,
-            C = C,
+            A = equacao.valor_a,
+            B = equacao.valor_b,
+            C = equacao.valor_c,
             data=data,
             raiz_delta=raiz_delta,
             delta=delta

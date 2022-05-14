@@ -7,6 +7,18 @@ class SegundoGrau:
         self.b = valor_b
         self.c = valor_c
         self.resultado = list()
+
+    @property
+    def valor_a(self):
+        return self.a
+    
+    @property
+    def valor_b(self):
+        return self.b
+    
+    @property
+    def valor_c(self):
+        return self.c
     
     def calcular_delta(self):
         return (self.b**2) - (4 * self.a * self.c)
