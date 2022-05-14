@@ -8,6 +8,7 @@ class SegundoGrau:
         self.c = valor_c
         self.resultado = list()
 
+    # Getters
     @property
     def valor_a(self):
         return self.a
@@ -20,6 +21,7 @@ class SegundoGrau:
     def valor_c(self):
         return self.c
     
+    # Functions
     def calcular_delta(self):
         return (self.b**2) - (4 * self.a * self.c)
 
@@ -41,6 +43,7 @@ class SegundoGrau:
         
         return self.resultado
     
+    # Changing built-in function
     def __str__(self):
         return f"A: {self.a}\nB: {self.b}\nC: {self.c}\nDelta: {self.calcular_delta}\nResult: {self.calcular_raizes}"
 

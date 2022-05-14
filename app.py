@@ -32,9 +32,9 @@ def resolution():
             A = equacao.valor_a,
             B = equacao.valor_b,
             C = equacao.valor_c,
-            data=data,
-            raiz_delta=raiz_delta,
-            delta=delta
+            data = data,
+            delta = delta,
+            raiz_delta = raiz_delta
         )
 
 @app.route("/voltar")
